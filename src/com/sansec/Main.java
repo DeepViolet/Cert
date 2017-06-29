@@ -20,11 +20,10 @@ public class Main {
     public static void main(String[] args) throws CertificateException, IOException {
 	// write your code here
 
-        //FileInputStream fileInputStream = new FileInputStream("C:\\Users\\liuhuiyi\\mycert.crt");
         String filePath = "C:\\Users\\liuhuiyi\\mycert.crt";
         String filePath2 = "D:\\SaaSSVN\\云签名验签系统\\开发目录\\服务端\\workspace\\Netty1-noimpkey\\src\\rootRsa\\c2.cer";
         String filePath3 = "c:\\Users\\liuhuiyi\\Desktop\\df.crt";
-        X509Certificate cert = GenCert(filePath3);
+        X509Certificate cert = GenCert(filePath2);
 
 
         /*******************
