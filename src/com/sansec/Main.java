@@ -3,6 +3,7 @@ package com.sansec;
 import sun.misc.BASE64Decoder;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.NoSuchProviderException;
@@ -68,23 +69,33 @@ public class Main {
         File file = new File(filepath);
         String fileName = file.getName();
         String suffix = fileName.substring(fileName.lastIndexOf(".") + 1);
+        FileInputStream fileInputStream = null;
         if(suffix.equals("crt")){
             try {
-                FileInputStream fileInputStream = new FileInputStream(filepath);
+                 fileInputStream = new FileInputStream(filepath);
                 try {
+                    if(fileInputStream != null)
                     cert= (X509Certificate)certificateFactory.generateCertificate(fileInputStream);
                 } catch (CertificateException e) {
                     e.printStackTrace();
                 }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
+            }finally {
+                try {
+                    if (fileInputStream != null)
+                    fileInputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
 
         }
         else {
             String filecontent = null;
             try {
-                filecontent = new String(Files.readAllBytes(Paths.get(filepath)));
+
+                filecontent = new String(Files.readAllBytes(Paths.get(filepath)),Charset.forName("UTF-8"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
