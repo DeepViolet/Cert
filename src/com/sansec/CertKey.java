@@ -4,7 +4,20 @@ package com.sansec;
  * Created by liuhuiyi on 2017/6/29.
  */
 public class CertKey {
-    String type;
+    private String type;
+
+    //算法
+    private String algthm;
+    //指数e
+    private String e ;
+    //公共密钥位数
+    private int bits ;
+    //公共密钥
+    private String n;
+    //签名值
+    private String singature ;
+
+    private int sigLen;
 
 
     public String getType() {
@@ -16,11 +29,11 @@ public class CertKey {
     }
 
     public String getAlgthm() {
-        return Algthm;
+        return algthm;
     }
 
     public void setAlgthm(String algthm) {
-        Algthm = algthm;
+        this.algthm = algthm;
     }
 
     public String getE() {
@@ -63,23 +76,13 @@ public class CertKey {
         this.sigLen = sigLen;
     }
 
-    //算法
-    String Algthm ;
-    //指数e
-    String e ;
-    //公共密钥位数
-    int bits ;
-    //公共密钥
-    String n;
-    //签名值
-    String singature ;
-    int sigLen;
+
 
     public String toString(){
-        if(Algthm=="RSA"){
+        if(algthm.equals("RSA")){
             return  "************公钥信息************\n"+
                 "证书类型: " +type + "\n"
-                +"算法: " + Algthm + "\n"
+                +"算法: " + algthm + "\n"
                 +"公共密钥位数: "+bits+ "\n"
                 +"指数e: " + e+ "\n"
                 +"公共密钥n: "+n+"\n"
@@ -88,7 +91,7 @@ public class CertKey {
         }else{
             return  "************公钥信息************\n"+
                     "证书类型: " +type + "\n"
-                    +"算法: " + Algthm + "\n"
+                    +"算法: " + algthm + "\n"
                     +"公共密钥: "+n+"\n";
         }
     }

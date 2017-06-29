@@ -5,73 +5,73 @@ package com.sansec;
  */
 public class CertSubject {
     //使用者常用名称
-    String SubjectCN ;
+    private String subjectCN;
     //使用者组织
-    String SubjectOU ;
+    private String subjectOU;
     //使用者单位名称
-    String SubjectO ;
+    private String subjectO;
     //使用者城市
-    String SubjectL ;
+    private  String subjectL;
     //使用者省/自治区
-    String SubjectST;
+    private String subjectST;
     //使用者国家/地区
-    String SubjectC;
+    private String subjectC;
 
     public String getSubjectCN() {
-        return SubjectCN;
+        return subjectCN;
     }
 
     public void setSubjectCN(String subjectCN) {
-        SubjectCN = subjectCN;
+        this.subjectCN = subjectCN;
     }
 
     public String getSubjectOU() {
-        return SubjectOU;
+        return subjectOU;
     }
 
     public void setSubjectOU(String subjectOU) {
-        SubjectOU = subjectOU;
+        this.subjectOU = subjectOU;
     }
 
     public String getSubjectO() {
-        return SubjectO;
+        return subjectO;
     }
 
     public void setSubjectO(String subjectO) {
-        SubjectO = subjectO;
+        this.subjectO = subjectO;
     }
 
     public String getSubjectL() {
-        return SubjectL;
+        return subjectL;
     }
 
     public void setSubjectL(String subjectL) {
-        SubjectL = subjectL;
+        this.subjectL = subjectL;
     }
 
     public String getSubjectST() {
-        return SubjectST;
+        return subjectST;
     }
 
     public void setSubjectST(String subjectST) {
-        SubjectST = subjectST;
+        this.subjectST = subjectST;
     }
 
     public String getSubjectC() {
-        return SubjectC;
+        return subjectC;
     }
 
     public void setSubjectC(String subjectC) {
-        SubjectC = subjectC;
+        this.subjectC = subjectC;
     }
 
     public String toString(){
         return  "************主题信息************\n"+
-                "使用者常用名称: " +SubjectCN + "\n"
-                +"使用者组织: " + SubjectOU + "\n"
-                +"使用者单位名称: " + SubjectO+ "\n"
-                +"使用者城市: "+SubjectL+ "\n"
-                +"使用者省/自治区: "+SubjectST+"\n"
-                +"使用者国家/地区: "+SubjectC;
+                "使用者常用名称: " + subjectCN + "\n"
+                +"使用者组织: " + subjectOU + "\n"
+                +"使用者单位名称: " + subjectO + "\n"
+                +"使用者城市: "+ subjectL + "\n"
+                +"使用者省/自治区: "+ subjectST +"\n"
+                +"使用者国家/地区: "+ subjectC;
     }
 }

@@ -5,11 +5,27 @@ package com.sansec;
  */
 public class CertIssue {
     //签发者常用名称
-    String issueCN ;
+    private String issueCN ;
     //签发者组织
-    String issueOU;
+    private String issueOU;
+    //签发者单位名称
+    private String issueO ;
+    //签发者城市
+    private String issueL ;
+    //签发者省/自治区
+    private String issueST ;
+    //签发者国家/地区
+    private String issueC ;
+    //版本
+    private String version ;
+    // 在此之前无效
+    private String from;
+    //在此之后无效
+    private String end;
+    //签名算法
+    private String alg;
 
-    public String getIssueCN() {
+    public final String getIssueCN() {
         return issueCN;
     }
 
@@ -57,17 +73,7 @@ public class CertIssue {
         this.issueC = issueC;
     }
 
-    //签发者单位名称
-    String issueO ;
-    //签发者城市
-    String issueL ;
-    //签发者省/自治区
-    String issueST ;
-    //签发者国家/地区
-    String issueC ;
 
-    //版本
-    String version ;
 
     public String getVersion() {
         return version;
@@ -78,35 +84,29 @@ public class CertIssue {
     }
 
     public String getFrom() {
-        return From;
+        return from;
     }
 
     public void setFrom(String from) {
-        From = from;
+        this.from = from;
     }
 
     public String getEnd() {
-        return End;
+        return end;
     }
 
     public void setEnd(String end) {
-        End = end;
+        this.end = end;
     }
 
     public String getAlg() {
-        return Alg;
+        return alg;
     }
 
     public void setAlg(String alg) {
-        Alg = alg;
+        this.alg = alg;
     }
 
-    // 在此之前无效
-    String From;
-    //在此之后无效
-    String End;
-    //签名算法
-    String Alg;
 
     public String toString(){
         return  "************签发者信息************\n"+
@@ -117,8 +117,8 @@ public class CertIssue {
                 +"签发者省/自治区: "+issueST+"\n"
                 +"签发者国家/地区: "+issueC+"\n"
                 +"版本: "+version+"\n"
-                +"签名算法: "+Alg+"\n"
-                +"在此之前无效: "+From+"\n"
-                +"在此之后无效: "+End;
+                +"签名算法: "+ alg +"\n"
+                +"在此之前无效: "+ from +"\n"
+                +"在此之后无效: "+ end;
     }
 }
